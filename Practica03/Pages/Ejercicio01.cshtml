@@ -1,0 +1,37 @@
+﻿@page
+@model Practica03.Pages.Ejercicio01Model
+@{
+    ViewData["title"] = "Ejercicio 01";
+}
+
+<div>
+    <br />
+    <h2>Calculadora de Cuotas Mensuales</h2>
+    <p>*Amortización basada en el sistema francés.</p>
+    <form method="get">
+        <p>Monto Solicitado</p>
+        <input type="number" name="monto" value="" />
+        <p>Cantidad de Cuotas</p>
+        <input type="number" name="cuotas" value="" />
+        <p>Interés Anual (%)</p>
+        <input type="number" name="interesAnual" value="" />
+        <br />
+        <br />
+        <p style="font-size : 110%; font-weight: bold">Cuota Mensual: @string.Format("{0:0,0.00}", @Model.CalcularCuota()) </p>
+        <input type="submit" value="Calcular Cuota" />
+        <br />
+        <br />
+        <p>
+            <b>DETALLE</b>                                                                            <br />
+            Monto Principal:&emsp;&emsp;&emsp;            @string.Format("{0:0,0.00}", @Model.monto)  <br />
+            Cantidad de Cuotas:&emsp;&nbsp;               @Model.cuotas                               <br />
+            Interés Anual:&emsp;&emsp;&emsp;&emsp;&nbsp;  @Model.interesAnual%
+        </p>
+
+    </form>
+
+
+   
+
+
+</div>
