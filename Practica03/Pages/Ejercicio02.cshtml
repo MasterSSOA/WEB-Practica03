@@ -1,15 +1,35 @@
 ﻿@page
 @model Practica03.Pages.Ejercicio02Model
-@{         
+@{
     ViewData["title"] = "Ejercicio 02";
 }
-
 
 <div class="text-center">
 
     <br />
     <h2>Banco ABC</h2>
     <p style="font-weight: bold; font-size:150%">Cajero Automántico</p>
-    <br />
-
+    <form method="get">
+        <p>
+            Pertenece al Banco ABC <br />
+            <input type="radio" id="si" name="isABCBank" value="true" />
+            <label for="si">Si</label>
+            <input type="radio" id="no" name="isABCBank" value="false" />
+            <label for="no">No</label>
+            <br />
+            Monto a Retirar:
+            <input type="number" name="monto" value="" />
+        </p>
+        <br />
+        <input type="submit" value="Realizar Retiro" />
+        <br />
+        <br />
+        <p>
+            @Model.title1 <br />
+            @Model.title2 <br />
+            @Model.detail1 <br />
+            @Model.detail2 <br />
+            @Model.detail3 <br />
+        </p>
+    </form>
 </div>
